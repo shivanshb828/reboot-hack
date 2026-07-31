@@ -1,0 +1,39 @@
+# ── Reboot dev state ─────────────────────────────────────────────────────────
+# Contains RocksDB files, crypto root keys, WAL logs, SST files.
+# Never commit this — re-created by `rbt dev run`.
+.rbt/
+
+# ── Reboot generated code ─────────────────────────────────────────────────────
+# Re-created by `rbt generate`. Only the api/ source files are canonical.
+backend/api/
+web/src/api/
+boilerplate/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# ── Node / React frontend ─────────────────────────────────────────────────────
+web/node_modules/
+.rbt/node_modules/
+web/build/
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── Editor / OS ───────────────────────────────────────────────────────────────
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
