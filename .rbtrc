@@ -44,5 +44,23 @@ dev run --application=backend/src/main.py
 # Save state between restarts.
 dev run --application-name=triagedesk
 
+# Default to HMR mode for MCP UI development.
+dev run --default-config=hmr
+
+# HMR: Vite dev server proxied through Envoy.
+# Run Vite separately with: cd frontend && npm run dev
+dev run --frontend-root-path=frontend
+dev run:hmr --frontend-host=http://localhost:4444
+
+# Dist mode: serve pre-built MCP UI artifacts from frontend/dist.
+# Build first with: cd frontend && npm run build
+dev run:dist --frontend-dist-path=frontend/dist
+
+# Production serving mirrors dist mode.
+serve run --python
+serve run --frontend-dist-path=frontend/dist --frontend-root-path=frontend
+serve run --application=backend/src/main.py
+serve run --application-name=triagedesk
+
 # When expunging, expunge that state we've saved.
 dev expunge --application-name=triagedesk

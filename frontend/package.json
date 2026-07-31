@@ -1,0 +1,31 @@
+{
+  "name": "triagedesk-mcp-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "1.10.1",
+    "@modelcontextprotocol/ext-apps": "1.5.0",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@reboot-dev/reboot-api": "1.4.0",
+    "@reboot-dev/reboot-react": "1.4.0",
+    "@reboot-dev/reboot-web": "1.4.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "uuid": "11.1.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@types/react": "^19.2.1",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.5.2",
+    "vite": "^6.3.5",
+    "vite-plugin-singlefile": "^2.0.3"
+  }
+}

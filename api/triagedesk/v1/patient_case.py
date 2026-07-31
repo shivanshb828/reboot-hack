@@ -1,5 +1,5 @@
 from typing import Optional
-from reboot.api import API, Type, Model, Field, Methods, Reader, Writer, Transaction, Workflow, Tool
+from reboot.api import API, Type, Model, Field, Methods, Reader, Writer, Transaction, Workflow, Tool, UI
 
 
 # ── State ─────────────────────────────────────────────────────────────────────
@@ -69,6 +69,13 @@ api = API(
                 request=GetStatusRequest,
                 response=GetStatusResponse,
                 mcp=Tool(name="get_patient_status", title="Get Patient Case Status"),
+            ),
+            patient_summary_card=UI(
+                request=None,
+                path="frontend/mcp/patient_summary_card",
+                title="Patient Summary Card",
+                description="Show a compact live patient case summary card with "
+                "status, assigned bed, dose count, and notify status.",
             ),
             admit=Transaction(
                 request=AdmitRequest,
